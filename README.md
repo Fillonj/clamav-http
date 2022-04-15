@@ -1,5 +1,5 @@
 # clamav-http
-Clamav instance with http api. To supersede https://github.com/UKHomeOffice/docker-clamav
+Clamav instance with http api. Forked from https://github.com/UKHomeOffice/clamav-http
 
 
 ## Installation
@@ -17,6 +17,7 @@ More detailed documentation on the helm chart can be found [here](/charts/clamav
 ## Components
 
 clamav-http is made up of three components, clamav, clamav-http and clamav-mirror and is designed to be deployed as a service in kubernetes via its helm chart.
+This version differ from the forked one, with the use an Nginx Ingress Controller to proxy request to clamav-http with auto generated certificate (Not pushed yet)
 
 ### clamav
 
