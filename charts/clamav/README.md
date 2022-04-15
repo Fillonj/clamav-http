@@ -39,7 +39,7 @@ Current chart version is `0.3.2`
 | clamavMirror.volume.storageClass | string | `"gp2-encrypted"` |  |
 | fullnameOverride | string | `""` | override the full name of the clamav chart |
 | nameOverride | string | `""` | override the name of the clamav chart |
-| nginxProxy.image | string | `"quay.io/ukhomeofficedigital/nginx-proxy"` | The nginx proxy docker image |
-| nginxProxy.resources | object | `{"limits":{"cpu":"1500m","ephemeral-storage":"1000M","memory":"3000M"},"requests":{"cpu":"1000m","ephemeral-storage":"500M","memory":"2000M"}}` | The resource requests and limits for the nginx proxy service |
-| nginxProxy.version | string | `"v3.4.20"` | The nginx proxy docker image version |
+<!-- | nginxProxy.image | string | `"quay.io/ukhomeofficedigital/nginx-proxy"` | The nginx proxy docker image | -->
+<!-- | nginxProxy.resources | object | `{"limits":{"cpu":"1500m","ephemeral-storage":"1000M","memory":"3000M"},"requests":{"cpu":"1000m","ephemeral-storage":"500M","memory":"2000M"}}` | The resource requests and limits for the nginx proxy service | -->
+<!-- | nginxProxy.version | string | `"v3.4.20"` | The nginx proxy docker image version | -->
 | service.port | int | `443` | The port to be used by the clamav service |

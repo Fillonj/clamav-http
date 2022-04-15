@@ -9,7 +9,7 @@ spec:
   ingress:
   - ports:
     - protocol: TCP
-      port: 10443
+      port: 8080
     {{- if .Values.service.ingress }}
     from: {{ toYaml .Values.service.ingress | nindent 4 }}
     {{- end }}

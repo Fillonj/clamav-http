@@ -1,13 +1,13 @@
 FROM golang:1.13 as builder
 
-WORKDIR /go/src/github.com/ukhomeoffice/clamav-http/clamav-http
+WORKDIR /go/src/github.com/Fillonj/clamav-http/clamav-http
 
 COPY go.mod go.sum main.go ./
 
 COPY server/  ./server/
 
 RUN CGO_ENABLED=0 GOOS=linux go install -v \
-            github.com/ukhomeoffice/clamav-http/clamav-http
+            github.com/Fillonj/clamav-http/clamav-http
 
 FROM alpine:3.13.5
 RUN apk --no-cache add ca-certificates

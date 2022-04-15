@@ -7,8 +7,9 @@ import (
 
 	"github.com/sirupsen/logrus"
 
-	"github.com/ukhomeoffice/clamav-http/clamav-http/server/v0"
-	"github.com/ukhomeoffice/clamav-http/clamav-http/server/v1alpha"
+	v0 "github.com/Fillonj/clamav-http/clamav-http/server/v0"
+	v1 "github.com/Fillonj/clamav-http/clamav-http/server/v1"
+	v1alpha "github.com/Fillonj/clamav-http/clamav-http/server/v1alpha"
 )
 
 func RunHTTPListener(clamd_address string, port int, max_file_mem int64, logger *logrus.Logger) error {
@@ -37,6 +38,15 @@ func RunHTTPListener(clamd_address string, port int, max_file_mem int64, logger 
 		Logger:  logger,
 	})
 	m.Handle("/v1alpha/scan", &v1alpha.ScanHandler{
+		Address:      clamd_address,
+		Max_file_mem: max_file_mem,
+		Logger:       logger,
+	})
+	m.Handle("/v1/healthz", &v1.HealthHandler{
+		Address: clamd_address,
+		Logger:  logger,
+	})
+	m.Handle("/v1/scan", &v1.ScanHandler{
 		Address:      clamd_address,
 		Max_file_mem: max_file_mem,
 		Logger:       logger,

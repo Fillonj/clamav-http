@@ -6,8 +6,8 @@ import (
 	"os"
 	"time"
 
+	"github.com/Fillonj/clamav-http/clamav-http/server"
 	"github.com/sirupsen/logrus"
-	"github.com/ukhomeoffice/clamav-http/clamav-http/server"
 )
 
 var (
@@ -31,7 +31,5 @@ func main() {
 	flag.Parse()
 	logger := newLogger()
 
-	server.RunHTTPListener(
-		fmt.Sprintf("tcp://%v:%d", *host, *port),
-		*listenPort, *maxFileMem, logger)
+	server.RunHTTPListener(fmt.Sprintf("tcp://%v:%d", *host, *port), *listenPort, *maxFileMem, logger)
 }
