@@ -22,3 +22,4 @@ Usage of clamav-http:
 |---|---|---|
 |[v0](server/v0/README.md) | / | Based on solita/clamav-rest |
 |[v1alpha](server/v1alpha/README.md) | /v1alpha/ | Implements error code on malware found |
+|[v1](server/v1/README.md) | /v1/ | Implements json body response |
